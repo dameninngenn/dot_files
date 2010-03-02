@@ -1,4 +1,4 @@
-# ¸À¸ìÀßÄê
+# è¨€èªè¨­å®š
 export LANG=ja_JP.UTF-8 
 
 # mailcheck off
@@ -7,10 +7,10 @@ export MAILCHECK=0
 # umask
 umask 022
 
-# BSDÍÑls¤Î¥«¥é¡¼ÀßÄê
+# BSDç”¨lsã®ã‚«ãƒ©ãƒ¼è¨­å®š
 export LSCOLORS=exfxbxdxcxegedabagacad
 
-# OS¤Ë¤è¤Ã¤Æls¥ª¥×¥·¥ç¥ó¤òÊ¬¤±¤ë
+# OSã«ã‚ˆã£ã¦lsã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’åˆ†ã‘ã‚‹
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G"
@@ -29,7 +29,7 @@ alias ll='ls -l'
 alias vi='vim'
 alias h='history -E -32'
 
-# historyÀßÄê
+# historyè¨­å®š
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
@@ -41,18 +41,18 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
-# local::libÍÑPATHÀßÄê(¥µ¡¼¥Ğ¡¼°ÍÂ¸)
+# local::libç”¨PATHè¨­å®š(ã‚µãƒ¼ãƒãƒ¼ä¾å­˜)
 eval $(perl -I$HOME/local/lib/perl5 -Mlocal::lib=$HOME/local)
 export PATH=$PATH:~/local/svn/bin:~/local/bin/perl5
 
-# zshÊä´°µ¡Ç½
+# zshè£œå®Œæ©Ÿèƒ½
 autoload -U compinit
 compinit
 
-# ls¤ÎÇÛ¿§¤ÈÊä´°¸õÊä¤ÎÇÛ¿§¤ò¹ç¤ï¤»¤ë
+# lsã®é…è‰²ã¨è£œå®Œå€™è£œã®é…è‰²ã‚’åˆã‚ã›ã‚‹
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=32' 'bd=46;34' 'cd=43;34'
 
-# ¥×¥í¥ó¥×¥ÈÀßÄê
+# ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆè¨­å®š
 setopt prompt_subst
 autoload colors
 colors
@@ -61,31 +61,31 @@ PROMPT2="%{[35;40m%}%_%%%{[m%}%{$reset_color%} "
 SPROMPT="%{[35;40m%}%r is correct? [n,y,a,e]:%{[m%}%{$reset_color%} "
 RPROMPT="%{[36;40m%}[%~]%{m%}%{${reset_color}%} "
 
-# TAB¤ÇÊÑ´¹¸õÊäÀÚ¤êÂØ¤¨
+# TABã§å¤‰æ›å€™è£œåˆ‡ã‚Šæ›¿ãˆ
 setopt auto_menu
 
-# cd¥³¥Ş¥ó¥ÉÌµ¤·¤Ç¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°
+# cdã‚³ãƒãƒ³ãƒ‰ç„¡ã—ã§ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•
 setopt auto_cd
 
-# cd - ¤Ç¥Ç¥£¥ì¥¯¥È¥ê°ÜÆ°²ÄÇ½
+# cd - ã§ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªç§»å‹•å¯èƒ½
 setopt auto_pushd
 
-# cd - ¸õÊä¤«¤Ö¤Ã¤Æ¤ë¤Î¤ÏÌµ»ë¤¹¤ë
+# cd - å€™è£œã‹ã¶ã£ã¦ã‚‹ã®ã¯ç„¡è¦–ã™ã‚‹
 setopt pushd_ignore_dups
 
-# ¥³¥Ş¥ó¥É¥Á¥§¥Ã¥¯
+# ã‚³ãƒãƒ³ãƒ‰ãƒã‚§ãƒƒã‚¯
 setopt correct
 
-# ¸õÊä¤òµÍ¤á¤ÆÉ½¼¨ 
+# å€™è£œã‚’è©°ã‚ã¦è¡¨ç¤º 
 setopt list_packed
 
-# ¸õÊä¤¬Ìµ¤¤¾ì¹ç¤Ë¥Ó¡¼¥×²»ÌÄ¤é¤µ¤Ê¤¤
+# å€™è£œãŒç„¡ã„å ´åˆã«ãƒ“ãƒ¼ãƒ—éŸ³é³´ã‚‰ã•ãªã„
 setopt nolistbeep 
 
-# /¤ò¾¡¼ê¤Ëºï½ü¤·¤Ê¤¤
+# /ã‚’å‹æ‰‹ã«å‰Šé™¤ã—ãªã„
 setopt noautoremoveslash
 
-# ¥¿¡¼¥ß¥Ê¥ë¤ÎÏÈÉ½¼¨
+# ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã®æ è¡¨ç¤º
 case "${TERM}" in
 screen)
     preexec(){
