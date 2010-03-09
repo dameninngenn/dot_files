@@ -41,10 +41,6 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
-# local::lib用PATH設定(サーバー依存)
-eval $(perl -I$HOME/local/lib/perl5 -Mlocal::lib=$HOME/local)
-export PATH=$PATH:~/local/svn/bin:~/local/bin/perl5
-
 # zsh補完機能
 autoload -U compinit
 compinit
@@ -101,4 +97,7 @@ kterm*|xterm)
     }
     ;;
 esac
+
+# 各環境依存の設定読み込み
+[ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
