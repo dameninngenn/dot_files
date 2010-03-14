@@ -67,6 +67,9 @@ set nocompatible
 " コマンドライン補完を拡張モードにする
 set wildmenu
 
+" 行番号表示
+set number
+
 " filetypeの識別
 filetype on
 
@@ -87,6 +90,9 @@ noremap k gk
 
 " オートインデントを有効にする
 set autoindent
+
+" 高度なインデント
+set smartindent
 
 " backspaceで行頭の空白,改行,insert時の手前文字削除可能
 set backspace=indent,eol,start
