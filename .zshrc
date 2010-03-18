@@ -27,6 +27,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -l'
 alias vi='vim'
+alias em='emacs'
 alias h='history -E -32'
 
 # history設定
