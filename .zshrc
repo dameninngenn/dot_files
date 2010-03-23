@@ -99,6 +99,15 @@ kterm*|xterm)
     ;;
 esac
 
+# ,でcd ../
+function cdup() {
+   echo
+   cd ..
+   zle reset-prompt
+}
+zle -N cdup
+bindkey "\," cdup
+
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
