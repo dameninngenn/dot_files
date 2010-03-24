@@ -18,6 +18,9 @@ freebsd*|darwin*)
 linux*)
     alias ls="ls --color"
     ;;
+cygwin*)
+    alias ls="ls --show-control-chars --color=auto"
+    ;;
 esac
 
 # alias
@@ -25,7 +28,7 @@ setopt complete_aliases
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias vi='vim'
 alias em='emacs'
 alias h='history -E -32'
