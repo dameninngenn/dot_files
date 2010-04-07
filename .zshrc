@@ -33,6 +33,9 @@ alias ll='ls -lh'
 alias vi='vim'
 alias em='emacs'
 alias h='history -E -32'
+alias vizsh='vi ~/.zshrc; source ~/.zshrc'
+alias vivimrc='vi ~/.vimrc'
+alias viemacs='vi ~/.emacs'
 
 # history設定
 HISTFILE=~/.zsh_history
