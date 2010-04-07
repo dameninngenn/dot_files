@@ -11,6 +11,38 @@
 (require 'one-key)
 (require 'one-key-config)
 
+(require 'htmlize)
+(require 'face2html)
+
+;;(defadvice cperl-indent-command
+;;    (around cperl-indent-or-complete)
+;;   "Changes \\[cperl-indent-command] so it
+;;autocompletes when at the end od a word."
+;;    (if (looking-at "\\>")
+;;	(dabbrev-expand nil)
+;;     ad-do-it))
+;;    (eval-after-load "cperl-mode"
+;;       ' (progn (require ' debbrev) (ad-activate '
+;;cperlindent-command)))
+
+(load-library "cperl-mode")
+  (add-to-list 'auto-mode-alist '("\\.[pP][LlMm][Cc]?$" . cperl-mode))
+  (while (let ((orig (rassoc 'perl-mode auto-mode-alist)))
+              (if orig (setcdr orig 'cperl-mode))))
+  (while (let ((orig (rassoc 'perl-mode interpreter-mode-alist)))
+           (if orig (setcdr orig 'cperl-mode))))
+  (dolist (interpreter '("perl" "perl5" "miniperl" "pugs"))
+    (unless (assoc interpreter interpreter-mode-alist)
+      (add-to-list 'interpreter-mode-alist (cons interpreter 'cperl-mode))))
+
+;;(autoload 'perl-mode "cperl-mode" "alternate mode for editing Perl programs" t)
+;;(add-to-list 'interpreter-mode-alist '("perl" . cperl-mode)) ;; shebang(#!…)に"perl"があったらcperl-mode
+;;(add-to-list 'auto-mode-alist '("\\.\\(p[lm]\\|f?cgi\\|t\\)$" . cperl-mode)) ;; こういう拡張子もcperl-mode
+;;(defalias 'perl-mode 'cperl-mode) ;; perl-modeもcperl-mode
+;;(setq cperl-indent-level 4)
+;;(setq cperl-continued-statement-offset 4)
+;;(setq cperl-comment-column 40)
+
 
 (defvar one-key-menu-Register-and-Rectangle-alist nil
   "The `one-key' menu alist for Register and Rectangle.")
