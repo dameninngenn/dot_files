@@ -163,6 +163,14 @@ set iskeyword+=:
 map ,pt <ESC>:%! perltidy<CR>
 map ,ptv <ESC>:'<,'>! perltidy<CR>
 
+" prove(テスト用)
+map ,t <ESC>:!prove -v %<CR>
+map ,T <ESC>:!prove -v % \| less<CR>
+
+" perlスクリプトとして実行
+map ,pe <ESC>:!perl %<CR>
+map ,PE <ESC>:!perl % \| less<CR>
+
 "======================================================================
 " For Perl
 "======================================================================
