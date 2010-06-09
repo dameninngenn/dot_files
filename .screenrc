@@ -1,4 +1,5 @@
 escape ^t^t
 hardstatus alwayslastline "%-w%{= ck}%n %t%{-}%+w"
 startup_message off
-termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo xterm*|kterm*|screen* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+#termcapinfo xterm*|kterm*|screen* ti@:te@
