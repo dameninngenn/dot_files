@@ -63,10 +63,26 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=32' 'bd=46;34' 'c
 setopt prompt_subst
 autoload colors
 colors
-PROMPT="%B%{[35;40m%}[orz %c/]%%%{[m%}%b%{$reset_color%} "
+
+# 左pormptにbranchの表示
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' formats '(%s-%b)'
+zstyle ':vcs_info:*' actionformats '(%s-%b|%a)'
+
+precmd_vcs_info () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+typeset -ga precmd_functions
+precmd_functions+=precmd_vcs_info
+
+PROMPT="%B%{%1(v|[32;40m%}%1v%f[m%}|)%}%b%B%{[35;40m%}[orz %c/]%%%{[m%}%b%{$reset_color%} "
 PROMPT2="%{[35;40m%}%_%%%{[m%}%{$reset_color%} "
 SPROMPT="%{[35;40m%}%r is correct? [n,y,a,e]:%{[m%}%{$reset_color%} "
 RPROMPT="%{[36;40m%}[%~]%{m%}%{${reset_color}%} "
+
 
 # TABで変換候補切り替え
 setopt auto_menu
