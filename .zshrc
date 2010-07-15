@@ -134,6 +134,13 @@ function cdup() {
 zle -N cdup
 bindkey "\," cdup
 
+# --prefix=の補完
+setopt magic_equal_subst
+
+# ペースト時のURL自動エスケープ
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
