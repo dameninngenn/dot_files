@@ -59,6 +59,9 @@ compinit
 # lsの配色と補完候補の配色を合わせる
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=32' 'bd=46;34' 'cd=43;34'
 
+# 大文字小文字の区別をせずに補完
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # プロンプト設定
 setopt prompt_subst
 autoload colors
