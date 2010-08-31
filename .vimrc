@@ -75,7 +75,6 @@ filetype on
 
 " ステータスライン表示
 set laststatus=2
-" set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set statusline=%<%n:%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 " 行番号とか右下に出す
@@ -99,6 +98,10 @@ set backspace=indent,eol,start
 
 " 検索結果文字列のハイライトを有効にする
 set hlsearch
+
+" Tab文字の可視化
+set list
+set listchars=tab:>\ 
 
 " タブが対応する空白の数
 set tabstop=4
@@ -133,18 +136,44 @@ set shiftwidth=4
 set term=builtin_linux
 set ttytype=builtin_linux
 
-" 挿入モード
-set paste
-
 " 色設定
 colorscheme darkblue
 
-"if has('mouse')
-"   set mouse=a
-"   set ttymouse=xterm2
-"endif
+" パッケージの::もオートコンプリートできるように
+set iskeyword+=:
 
-" autocmd FileType perl,pl,pm :set dictionary+=~/.vim/dict/perl_functions.dict
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" 大文字小文字を区別する
+let g:neocomplcache_enable_smart_case = 1
+
+" キャメルケース補完を有効にする
+let g:neocomplcache_enable_camel_case_completion = 1
+
+" アンダーバー補完を有効にする
+let g:neocomplcache_enable_underbar_completion = 1
+
+" シンタックスファイルの補完対象キーワードとする最小の長さ
+let g:neocomplcache_min_syntax_length = 3 
+
+" プラグイン毎の補完関数を呼び出す文字数
+let g:neocomplcache_plugin_completion_length = {
+  \ 'keyword_complete'  : 2,
+  \ 'syntax_complete'   : 2
+  \ }
+
+" ファイルタイプ毎の辞書ファイルの場所
+let g:neocomplcache_dictionary_filetype_lists = { 
+  \ 'default' : '',
+  \ 'perl' : $HOME.'/.vim/dict/perl.dict',
+  \ } 
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -152,12 +181,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-
-" Perlのインストールモジュールもオートコンプリートリストに
-set complete+=k~/.vim/dict/installed_Perl_module
-
-" パッケージの::もオートコンプリートできるように
-set iskeyword+=:
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " perltidy(コード整形)
 map ,pt <ESC>:%! perltidy<CR>
@@ -192,7 +219,3 @@ map ,PE <ESC>:!perl % \| less<CR>
 " perl-support.vim
 "let g:Perl_PerlcriticSeverity = 1
 
-" Perltidy (Perl Hacks #7)
-" http://perltidy.sourceforge.net/
-"map ,pt <ESC>:%! perltidy<CR>
-"map ,ptv <ESC>:%'<, '>! perltidy<CR>
