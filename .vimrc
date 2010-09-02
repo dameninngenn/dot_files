@@ -208,8 +208,11 @@ let g:yanktmp_file = $HOME.'/tmp/yanktmp'
 " バッファタブにパスを省略してファイル名のみ表示する(buftabs.vim)
 let g:buftabs_only_basename=1
 
-" FuzzyFinder
+" バッファ移動をspaceとshift + spaceで
+noremap <Space> :bnext<CR>
+noremap <S-Space> :bprev<CR>
 
+" FuzzyFinder(あいまい検索)
 nnoremap <unique> <silent> ,fb :FufBuffer!<CR>
 nnoremap <unique> <silent> ,ff :FufFile!<CR>
 nnoremap <unique> <silent> ,fm :FufMruFile!<CR>
