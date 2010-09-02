@@ -208,6 +208,20 @@ let g:yanktmp_file = $HOME.'/tmp/yanktmp'
 " バッファタブにパスを省略してファイル名のみ表示する(buftabs.vim)
 let g:buftabs_only_basename=1
 
+" FuzzyFinder
+
+nnoremap <unique> <silent> <space>fb :FufBuffer!<CR>
+nnoremap <unique> <silent> <space>ff :FufFile!<CR>
+nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
+nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
+autocmd FileType fuf nmap <C-c> <ESC>
+let g:fuf_patternSeparator = ' '
+let g:fuf_modesDisable = ['mrucmd']
+let g:fuf_mrufile_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
+let g:fuf_mrufile_maxItem = 100
+let g:fuf_enumeratingLimit = 20
+let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
+
 
 "======================================================================
 " For Perl
