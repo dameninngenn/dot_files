@@ -210,10 +210,10 @@ let g:buftabs_only_basename=1
 
 " FuzzyFinder
 
-nnoremap <unique> <silent> <space>fb :FufBuffer!<CR>
-nnoremap <unique> <silent> <space>ff :FufFile!<CR>
-nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
-nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
+nnoremap <unique> <silent> ,fb :FufBuffer!<CR>
+nnoremap <unique> <silent> ,ff :FufFile!<CR>
+nnoremap <unique> <silent> ,fm :FufMruFile!<CR>
+nnoremap <unique> <silent> ,fc :FufRenewCache<CR>
 autocmd FileType fuf nmap <C-c> <ESC>
 let g:fuf_patternSeparator = ' '
 let g:fuf_modesDisable = ['mrucmd']
