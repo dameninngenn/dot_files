@@ -230,6 +230,9 @@ let g:quickrun_config = {
 \   '*': {'runmode': 'simple','output': '!'},
 \ }
 
+" 拡張子の関連付け
+autocmd BufNewFile,BufRead *.wl set filetype=perl
+
 
 "======================================================================
 " For Perl
