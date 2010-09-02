@@ -225,6 +225,11 @@ let g:fuf_mrufile_maxItem = 100
 let g:fuf_enumeratingLimit = 20
 let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
 
+" quickrun(\r)の出力先をウィンドウではなく!実行と同じに変更
+let g:quickrun_config = {
+\   '*': {'runmode': 'simple','output': '!'},
+\ }
+
 
 "======================================================================
 " For Perl
