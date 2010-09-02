@@ -39,6 +39,11 @@ alias h='history -E -32'
 alias vizsh='vi ~/.zshrc; source ~/.zshrc'
 alias vivimrc='vi ~/.vimrc'
 alias viemacs='vi ~/.emacs'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gl='git log'
+alias gd='git diff'
 
 # history設定
 HISTFILE=~/.zsh_history
