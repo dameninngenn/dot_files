@@ -75,7 +75,8 @@ filetype on
 
 " ステータスライン表示
 set laststatus=2
-set statusline=%<%n:%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=
+set statusline+=%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c%V%8P
 
 " 行番号とか右下に出す
 set ruler
@@ -207,6 +208,12 @@ let g:yanktmp_file = $HOME.'/tmp/yanktmp'
 " buftabs設定
 " バッファタブにパスを省略してファイル名のみ表示する(buftabs.vim)
 let g:buftabs_only_basename=1
+
+" バッファの表示をステータスラインに
+let g:buftabs_in_statusline=1
+
+" 選択中のバッファをハイライト
+let g:buftabs_active_highlight_group="Visual"
 
 " バッファ移動をspaceとshift + spaceで
 noremap <Space> :bnext<CR>
