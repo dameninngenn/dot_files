@@ -222,6 +222,7 @@ noremap <S-Space> :bprev<CR>
 " FuzzyFinder(あいまい検索)
 nnoremap <unique> <silent> ,fb :FufBuffer!<CR>
 nnoremap <unique> <silent> ,ff :FufFile!<CR>
+nnoremap <unique> <silent> ,fd :FufDir!<CR>
 nnoremap <unique> <silent> ,fm :FufMruFile!<CR>
 nnoremap <unique> <silent> ,fc :FufRenewCache<CR>
 autocmd FileType fuf nmap <C-c> <ESC>
