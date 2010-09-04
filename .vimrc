@@ -240,6 +240,15 @@ let g:quickrun_config = {
 " 拡張子の関連付け
 autocmd BufNewFile,BufRead *.wl set filetype=perl
 
+" バッファ削除
+nmap <silent> ,d :bdelete<CR>
+nmap <silent> ,D :bdelete!<CR>
+
+" 改行は削除せず1行削除
+nnoremap <silent> ,a :S/^.*$//<CR>
+
+" 空行を挿入
+nnoremap ,o :<C-u>call append(expand('.'), '')<CR>j
 
 "======================================================================
 " For Perl
