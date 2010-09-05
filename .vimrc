@@ -267,6 +267,7 @@ let NERDTreeShowHidden = 1
 
 " Taglist(use exctags)
 nnoremap <silent> ,tl :Tlist<CR>
+set tags=tags,./tags,../tags
 
 
 "======================================================================
