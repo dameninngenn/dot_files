@@ -265,6 +265,9 @@ nnoremap <silent> ,ntd  :NERDTree <C-R>=expand("%:p:h")<CR><CR>
 " 隠しファイルの表示ON
 let NERDTreeShowHidden = 1
 
+" Taglist(use exctags)
+nnoremap <silent> ,tl :Tlist<CR>
+
 
 "======================================================================
 " For Perl
