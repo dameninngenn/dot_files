@@ -251,6 +251,21 @@ nnoremap <silent> ,a :S/^.*$//<CR>
 " 空行を挿入
 nnoremap ,o :<C-u>call append(expand('.'), '')<CR>j
 
+" 数値のインクリメントは常に10進数で行う
+set nrformats-=octal
+set nrformats-=hex
+
+" NERD_tree
+" トグル
+nnoremap <silent> ,ntt :NERDTreeToggle<CR>
+
+" 現在表示しているファイルのディレクトリを表示
+nnoremap <silent> ,ntd  :NERDTree <C-R>=expand("%:p:h")<CR><CR>
+
+" 隠しファイルの表示ON
+let NERDTreeShowHidden = 1
+
+
 "======================================================================
 " For Perl
 "======================================================================
