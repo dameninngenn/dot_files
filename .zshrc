@@ -150,6 +150,18 @@ setopt magic_equal_subst
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+# クリップボードへコピーするグローバルエイリアス
+if which pbcopy >/dev/null 2>&1 ; then 
+    # Mac  
+    alias -g C='| pbcopy'
+elif which xsel >/dev/null 2>&1 ; then 
+    # Linux
+    alias -g C='| xsel --input --clipboard'
+elif which putclip >/dev/null 2>&1 ; then 
+    # Cygwin 
+    alias -g C='| putclip'
+fi
+
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
