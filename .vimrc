@@ -199,12 +199,6 @@ map ,T <ESC>:!prove -v % \| less<CR>
 map ,pe <ESC>:!perl %<CR>
 map ,PE <ESC>:!perl % \| less<CR>
 
-" 別プロセス間のvimでコピー&ペースト
-map <silent> sy :call YanktmpYank()<cr>
-map <silent> sp :call YanktmpPaste_p()<cr>
-map <silent> sP :call YanktmpPaste_P()<cr>
-let g:yanktmp_file = $HOME.'/tmp/yanktmp'
-
 " buftabs設定
 " バッファタブにパスを省略してファイル名のみ表示する(buftabs.vim)
 let g:buftabs_only_basename=1
@@ -268,6 +262,9 @@ let NERDTreeShowHidden = 1
 " Taglist(use exctags)
 nnoremap <silent> ,tl :Tlist<CR>
 set tags=tags,./tags,../tags
+
+" yankringファイル保存PATH
+let g:yankring_history_dir = $HOME.'/tmp'
 
 
 "======================================================================
