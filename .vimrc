@@ -175,6 +175,18 @@ if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
 endif
 
+" 補完を選択しpopupを閉じる
+inoremap <expr><C-y> neocomplcache#close_popup()
+
+" 補完をキャンセルしpopupを閉じる
+inoremap <expr><C-e> neocomplcache#cancel_popup()
+
+" TABで補完できるようにする
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" 補完候補の共通部分までを補完する
+inoremap <expr><C-l> neocomplcache#complete_common_string()
+
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
