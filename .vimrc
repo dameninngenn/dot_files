@@ -170,6 +170,9 @@ let g:neocomplcache_dictionary_filetype_lists = {
   \ 'perl' : $HOME.'/.vim/dict/perl.dict',
   \ } 
 
+" ユーザー定義スニペット保存ディレクトリ
+let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
+
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
