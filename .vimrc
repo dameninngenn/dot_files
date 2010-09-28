@@ -283,6 +283,9 @@ set tags=tags,./tags,../tags
 " yankringファイル保存PATH
 let g:yankring_history_dir = $HOME.'/tmp'
 
+" Vimでカーソル下のPerlモジュールを開く
+autocmd FileType perl set isfname-=-
+
 
 "======================================================================
 " For Perl
@@ -294,9 +297,6 @@ let g:yankring_history_dir = $HOME.'/tmp'
 "        autocmd! BufRead,BufNewFile *.tdy set filetype=perl
 "        autocmd FileType perl set expandtab
 "        autocmd FileType perl set smarttab
-        " Vimでカーソル下のPerlモジュールを開く
-        " http://d.hatena.ne.jp/spiritloose/20060817/1155808744
-"        autocmd FileType perl set isfname-=-
         " bonnu
 "        autocmd BufWritePost,FileWritePost *.p[lm] !perl -MFindBin::libs -wc <afile>
 "    augroup END
