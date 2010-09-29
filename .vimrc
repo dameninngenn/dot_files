@@ -194,6 +194,8 @@ inoremap <expr><C-l> neocomplcache#complete_common_string()
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
+" Include補完の再キャッシュ
+map ,nr <ESC>:NeoComplCacheCachingInclude<CR>
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
