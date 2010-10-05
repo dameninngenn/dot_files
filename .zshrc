@@ -162,6 +162,17 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
+# ヘルプの表示
+bindkey "^B" run-help
+
+# run-help が呼ばれた時、zsh の内部コマンドの場合は該当する zsh のマニュアル表示
+[ -n "`alias run-help`" ] && unalias run-help
+autoload run-help
+
+# ls /usr/local/etc などと打っている際に、C-w で単語ごとに削除
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
