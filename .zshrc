@@ -46,6 +46,15 @@ alias gc='git commit'
 alias gl='git log'
 alias gd='git diff'
 
+alias unko='echo "　/＼＿________＿_／＼";
+echo "／　⌒　　 　　⌒ ::: ＼";
+echo "| （●）,　、（●）、　| 　　 ／￣￣￣￣￣";
+echo "|　,,ノ(、_, )ヽ、,, 　|  　＜　やるじゃん";
+echo "|　　ト‐＝‐ｧ 　 .::::| 　　 ＼＿＿＿＿＿";
+echo "＼　　｀ニニ´　  .:::／";
+echo "／｀ー‐--‐‐- ―´´＼"'
+alias l='unko; unko; unko; unko'
+
 # history設定
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
