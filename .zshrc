@@ -98,14 +98,15 @@ precmd_functions+=precmd_vcs_info
 
 # perlbrewで切り替えたperlバージョンの表示
 precmd_perl_v () {
-    psvar[2]=${PERLBREW_PERL}
+    [[ -n "${PERLBREW_PERL}" ]] && psvar[2]="${PERLBREW_PERL}"
 }
 precmd_functions+=precmd_perl_v
 
-PROMPT="%B%{%1(v|[32;40m%}%1v%f[m%}|)%}%b%B%{[35;40m%}[orz %c/]%%%{[m%}%b%{$reset_color%} "
+# prompt表示設定
+PROMPT="%B%1(v|%{[32;40m%}%1v%{[m%}|)%b%B%{[35;40m%}[orz %c/]%%%{[m%}%b%{$reset_color%} "
 PROMPT2="%{[35;40m%}%_%%%{[m%}%{$reset_color%} "
 SPROMPT="%{[35;40m%}%r is correct? [n,y,a,e]:%{[m%}%{$reset_color%} "
-RPROMPT="%{[36;40m%}[%~]%{m%}%B%{[31;40m%}(%2v)%{[m%}%{${reset_color}%} "
+RPROMPT="%{[36;40m%}[%~]%{m%}%2(v|%B%{[31;40m%}(%2v)%{[m%}|)%{${reset_color}%}"
 
 
 # TABで変換候補切り替え
