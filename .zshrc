@@ -172,7 +172,7 @@ elif which putclip >/dev/null 2>&1 ; then
 fi
 
 # ヘルプの表示
-bindkey "^B" run-help
+#bindkey "^B" run-help
 
 # run-help が呼ばれた時、zsh の内部コマンドの場合は該当する zsh のマニュアル表示
 [ -n "`alias run-help`" ] && unalias run-help
