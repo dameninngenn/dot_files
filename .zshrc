@@ -133,6 +133,9 @@ setopt nolistbeep
 # /を勝手に削除しない
 setopt noautoremoveslash
 
+# exit時にSIGHUPを送らない
+setopt nohup
+
 # ターミナルの枠表示
 case "${TERM}" in
 screen)
