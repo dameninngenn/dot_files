@@ -143,6 +143,9 @@ colorscheme darkblue
 " パッケージの::もオートコンプリートできるように
 set iskeyword+=:
 
+" pathogen.vim
+call pathogen#runtime_append_all_bundles()
+
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
@@ -228,21 +231,14 @@ let g:buftabs_active_highlight_group="Visual"
 
 " バッファ移動をspaceとshift + spaceで
 noremap <Space> :bnext<CR>
-noremap <S-Space> :bprev<CR>
+noremap <silent> ,<Space> :bprev<CR>
 
-" FuzzyFinder(あいまい検索)
-nnoremap <unique> <silent> ,fb :FufBuffer!<CR>
-nnoremap <unique> <silent> ,ff :FufFile!<CR>
-nnoremap <unique> <silent> ,fd :FufDir!<CR>
-nnoremap <unique> <silent> ,fm :FufMruFile!<CR>
-nnoremap <unique> <silent> ,fc :FufRenewCache<CR>
-autocmd FileType fuf nmap <C-c> <ESC>
-let g:fuf_patternSeparator = ' '
-let g:fuf_modesDisable = ['mrucmd']
-let g:fuf_mrufile_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
-let g:fuf_mrufile_maxItem = 100
-let g:fuf_enumeratingLimit = 20
-let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
+" Unite.vim
+nnoremap <unique> <silent> ,uf :Unite file<CR>
+nnoremap <unique> <silent> ,um :Unite file_mru<CR>
+nnoremap <unique> <silent> ,ud :Unite directory_mru<CR>
+nnoremap <unique> <silent> ,ub :Unite buffer<CR>
+nnoremap <unique> <silent> ,ur :Unite register<CR>
 
 " quickrun(\r)の出力先をウィンドウではなく!実行と同じに変更
 let g:quickrun_config = {
