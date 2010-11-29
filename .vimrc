@@ -143,6 +143,9 @@ colorscheme darkblue
 " パッケージの::もオートコンプリートできるように
 set iskeyword+=:
 
+" pathogen.vim
+call pathogen#runtime_append_all_bundles()
+
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
