@@ -231,7 +231,7 @@ let g:buftabs_active_highlight_group="Visual"
 
 " バッファ移動をspaceとshift + spaceで
 noremap <Space> :bnext<CR>
-noremap <S-Space> :bprev<CR>
+noremap <silent> ,<Space> :bprev<CR>
 
 " Unite.vim
 nnoremap <unique> <silent> ,uf :Unite file<CR>
