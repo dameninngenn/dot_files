@@ -28,6 +28,9 @@ cygwin*)
     ;;
 esac
 
+# PAGER
+export PAGER='less -R'
+
 # alias
 setopt complete_aliases
 alias rm='rm -i'
@@ -43,8 +46,8 @@ alias viemacs='vi ~/.emacs'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
-alias gl='git log'
-alias gd='git diff'
+alias gl='git log --color'
+alias gd='git diff --color'
 
 alias unko='echo "　/＼＿________＿_／＼";
 echo "／　⌒　　 　　⌒ ::: ＼";
