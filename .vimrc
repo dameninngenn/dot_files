@@ -282,6 +282,17 @@ let g:yankring_history_dir = $HOME.'/tmp'
 " Vimでカーソル下のPerlモジュールを開く
 autocmd FileType perl set isfname-=-
 
+" qfixgrep
+nnoremap <silent> ,g :Grep 
+nnoremap <silent> ,gr :RGrep 
+nnoremap <silent> ,gb :BGrep 
+
+" ジャンプ後quickfixを閉じる
+let QFix_CloseOnJump = 1
+
+" grepの対象から外す
+let MyGrep_ExcludeReg = '[~#]$\|\.o$\|\.obj$\|\.exe$\|[/\\]tags$\|[/\\]\.git[/\\]\|\.swp$'
+
 
 "======================================================================
 " For Perl
