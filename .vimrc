@@ -293,6 +293,9 @@ let QFix_CloseOnJump = 1
 " grepの対象から外す
 let MyGrep_ExcludeReg = '[~#]$\|\.o$\|\.obj$\|\.exe$\|[/\\]tags$\|[/\\]\.git[/\\]\|\.swp$'
 
+" vim-uwaa
+nnoremap <silent> ,uw :Uwaa normal<CR>
+
 
 "======================================================================
 " For Perl
