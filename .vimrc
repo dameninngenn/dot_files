@@ -262,6 +262,12 @@ nnoremap ,o :<C-u>call append(expand('.'), '')<CR>j
 set nrformats-=octal
 set nrformats-=hex
 
+" undo履歴の保持
+if version >= 703
+  set undofile
+  set undodir=~/tmp/
+endif
+
 " NERD_tree
 " トグル
 nnoremap <silent> ,ntt :NERDTreeToggle<CR>
