@@ -194,6 +194,9 @@ autoload run-help
 # ls /usr/local/etc などと打っている際に、C-w で単語ごとに削除
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
+# 改行無し出力をプロンプトで上書きしない
+unsetopt promptcr
+
 
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
