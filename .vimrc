@@ -302,6 +302,11 @@ let MyGrep_ExcludeReg = '[~#]$\|\.o$\|\.obj$\|\.exe$\|[/\\]tags$\|[/\\]\.git[/\\
 " vim-uwaa
 nnoremap <silent> ,uw :Uwaa normal<CR>
 
+" マッピングを表示
+command!
+\   -nargs=* -complete=mapping
+\   AllMaps
+\   map <args> | map! <args> | lmap <args>
 
 "======================================================================
 " For Perl
