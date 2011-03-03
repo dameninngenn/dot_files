@@ -308,6 +308,11 @@ command!
 \   AllMaps
 \   map <args> | map! <args> | lmap <args>
 
+" perl.vim
+autocmd FileType perl :compiler perl
+autocmd FileType perl :make
+
+
 "======================================================================
 " For Perl
 "======================================================================
