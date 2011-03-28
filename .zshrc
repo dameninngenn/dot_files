@@ -197,6 +197,15 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # 改行無し出力をプロンプトで上書きしない
 unsetopt promptcr
 
+# 前方予測
+autoload -U predict-on
+zle -N predict-on
+zle -N predict-off
+bindkey '^xp' predict-on
+bindkey '^x^p' predict-off
+zstyle ':predict' verbose true
+zstyle ':predict' toggle true
+
 
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
