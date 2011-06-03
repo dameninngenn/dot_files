@@ -308,9 +308,12 @@ command!
 \   AllMaps
 \   map <args> | map! <args> | lmap <args>
 
+"Escの2回押しでハイライト消去
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
 " perl.vim
-autocmd FileType perl :compiler perl
-autocmd FileType perl :make
+" autocmd FileType perl :compiler perl
+" autocmd FileType perl :make
 
 
 "======================================================================
