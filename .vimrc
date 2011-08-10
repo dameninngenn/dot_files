@@ -207,6 +207,10 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+" ポップアップメニューの色指定
+hi Pmenu ctermbg=4
+hi PmenuSel ctermbg=8
+
 " perltidy(コード整形)
 map ,pt <ESC>:%! perltidy<CR>
 map ,ptv <ESC>:'<,'>! perltidy<CR>
@@ -214,10 +218,6 @@ map ,ptv <ESC>:'<,'>! perltidy<CR>
 " prove(テスト用)
 map ,t <ESC>:!prove -v %<CR>
 map ,T <ESC>:!prove -v % \| less<CR>
-
-" perlスクリプトとして実行
-map ,pe <ESC>:!perl %<CR>
-map ,PE <ESC>:!perl % \| less<CR>
 
 " buftabs設定
 " バッファタブにパスを省略してファイル名のみ表示する(buftabs.vim)
@@ -239,6 +239,10 @@ nnoremap <unique> <silent> ,um :Unite file_mru<CR>
 nnoremap <unique> <silent> ,ud :Unite directory_mru<CR>
 nnoremap <unique> <silent> ,ub :Unite buffer<CR>
 nnoremap <unique> <silent> ,ur :Unite register<CR>
+nnoremap <unique> <silent> ,us :Unite source<CR>
+
+" ハイライトの指定
+let g:unite_abbr_highlight = 'Pmenu'
 
 " quickrun(\r)の出力先をウィンドウではなく!実行と同じに変更
 let g:quickrun_config = {
@@ -310,6 +314,18 @@ command!
 
 "Escの2回押しでハイライト消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
+" phrase.vim
+let mapleader = ","
+let g:phrase_ft_tbl = {}
+nnoremap <silent> <Leader>pl  :PhraseList<CR>
+nnoremap <silent> <Leader>pe  :PhraseEdit<CR>
+vnoremap <silent> <Leader>pe  :PhraseEdit<CR>
+vnoremap <silent> <Leader>pc  :PhraseCreate<CR>
+vnoremap <silent> <Leader>pl  :<C-u>PhraseList<CR>
+
+" If you use Unite plugin
+nnoremap <silent> <Leader>up  :<C-u>Unite phrase<CR>
 
 " perl.vim
 " autocmd FileType perl :compiler perl
