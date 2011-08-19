@@ -327,6 +327,27 @@ vnoremap <silent> <Leader>pl  :<C-u>PhraseList<CR>
 " If you use Unite plugin
 nnoremap <silent> <Leader>up  :<C-u>Unite phrase<CR>
 
+" http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
+nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
+if !exists('*PreviewOpenBrace')
+    function PreviewOpenBrace()
+        let l:pos = getpos('.')
+        if l:pos == get(s:, 'last_pos', [])
+            let l:count = s:last_count + 1
+        else
+            let l:count = v:count1
+        endif
+        pclose
+        pedit
+        wincmd p
+        execute 'normal!' l:count . '[{'
+        setlocal cursorline
+        wincmd p
+        let s:last_count = l:count
+        let s:last_pos   = l:pos
+    endfunction
+endif
+
 " perl.vim
 " autocmd FileType perl :compiler perl
 " autocmd FileType perl :make
