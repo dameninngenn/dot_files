@@ -261,6 +261,7 @@ nnoremap <silent> ,a :S/^.*$//<CR>
 
 " 空行を挿入
 nnoremap ,o :<C-u>call append(expand('.'), '')<CR>j
+nnoremap ,O :<C-u>call append(expand('.'), '')<CR>
 
 " 数値のインクリメントは常に10進数で行う
 set nrformats-=octal
