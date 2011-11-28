@@ -76,7 +76,7 @@ filetype on
 " ステータスライン表示
 set laststatus=2
 set statusline=
-set statusline+=%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c%V%8P
+set statusline+=%=\ %{g:HahHah()}\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c%V%8P
 
 " 行番号とか右下に出す
 set ruler
