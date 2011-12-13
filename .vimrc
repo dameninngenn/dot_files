@@ -395,6 +395,11 @@ endfunction
 au! BufWritePost *.pm call s:validate_package_name()
 au! BufWritePost *.pl,*.pm call s:validate_encoding_utf8()
 
+" 環境毎の個別設定読み込み
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
+
 " perl.vim
 " autocmd FileType perl :compiler perl
 " autocmd FileType perl :make
