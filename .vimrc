@@ -400,26 +400,3 @@ if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
 
-" perl.vim
-" autocmd FileType perl :compiler perl
-" autocmd FileType perl :make
-
-
-"======================================================================
-" For Perl
-"======================================================================
-"if has('autocmd')
-"    augroup EditPerl
-"        autocmd!
-"        autocmd! BufRead,BufNewFile *.cgi set filetype=perl
-"        autocmd! BufRead,BufNewFile *.tdy set filetype=perl
-"        autocmd FileType perl set expandtab
-"        autocmd FileType perl set smarttab
-        " bonnu
-"        autocmd BufWritePost,FileWritePost *.p[lm] !perl -MFindBin::libs -wc <afile>
-"    augroup END
-"endif
-
-" perl-support.vim
-"let g:Perl_PerlcriticSeverity = 1
-
