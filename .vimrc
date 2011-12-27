@@ -435,6 +435,8 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ':set binary 【バイナリ編集モード】[command][binary]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':%!xxd 【16進数ダンプ】[command][binary]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':%!xxd -r 【バイナリ保存】[command][binary]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': '/hoge\&fuga 【and検索】[search]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': '/hoge\|fuga 【or検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \ ]
 endfunction
 call unite#define_source(s:unite_source)
