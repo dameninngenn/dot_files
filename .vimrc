@@ -144,6 +144,13 @@ colorscheme darkblue
 " パッケージの::もオートコンプリートできるように
 set iskeyword+=:
 
+" コマンド履歴、検索履歴表示コマンド置き換え
+nnoremap qqq: <ESC>q:
+nnoremap qqq/ <ESC>q/
+nnoremap q: <Nop>
+nnoremap q/ <Nop>
+nnoremap q? <Nop>
+
 " pathogen.vim
 call pathogen#runtime_append_all_bundles()
 
