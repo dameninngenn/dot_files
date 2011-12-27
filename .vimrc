@@ -400,3 +400,37 @@ if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
 
+
+" 忘れがちなショートカットとかをUniteで見れるように
+let s:unite_source = {
+\   'name': 'my_help',
+\ }
+function! s:unite_source.gather_candidates(args, context)
+  return [
+  \   { 'word': ',nr 【Include補完の再キャッシュ】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',uf 【:Unite file】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',um 【:Unite file_mru】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',ud 【:Unite directory_mru】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',ub 【:Unite buffer】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',ur 【:Unite register】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',us 【:Unite source】[neocomplcache]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',pt 【バッファ全てperltidy】[perl]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',ptv 【選択範囲perltidy】[perl]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',t 【prove -v %】[perl]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',T 【prove -v % | less】[perl]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',g 【:Grep】[qfixgrep]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',gr 【:RGrep】[qfixgrep]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',gb 【:BGrep】[qfixgrep]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',uw 【うわぁああああああ】[AA]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',up 【:Unite phrase】[phrase]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',pl 【:PhraseList】[phrase]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',pe 【:PhraseEdit】[phrase]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',pc 【:PhraseCreate】[phrase]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',r 【スクリプト実行】[quickrun]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ':e ++enc=utf-8 【文字コードをutf8に】[command]', 'source': 'my_help', 'kind': 'word' },
+  \ ]
+endfunction
+call unite#define_source(s:unite_source)
+unlet s:unite_source
+nnoremap <silent> ,uh :Unite my_help<CR>
+
