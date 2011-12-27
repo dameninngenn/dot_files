@@ -78,6 +78,14 @@ set laststatus=2
 set statusline=
 set statusline+=%=\ %{g:HahHah()}\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c%V%8P
 
+" ステータスラインの色をモード別で変更
+au InsertEnter * hi StatusLine guifg=DarkBlue guibg=DarkYellow gui=none ctermfg=DarkBlue ctermbg=DarkYellow cterm=none
+au InsertLeave * hi StatusLine guifg=DarkBlue guibg=White gui=none ctermfg=DarkBlue ctermbg=White cterm=none
+if has('unix') && !has('gui_running')
+    inoremap <silent> <ESC> <ESC>
+    inoremap <silent> <C-[> <ESC>
+endif
+
 " 行番号とか右下に出す
 set ruler
 
