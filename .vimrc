@@ -121,13 +121,6 @@ set clipboard+=unnamed
 " バッファを切替えてもundoの効力を失わない
 set hidden
 
-" 入力モード時、ステータスラインのカラーを変更
-augroup InsertHook
-autocmd!
-autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
-autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
-augroup END
-
 " 全角スペースを視覚化(SJIS only)
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
