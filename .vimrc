@@ -291,6 +291,9 @@ set tags=tags,./tags,../tags
 " yankringファイル保存PATH
 let g:yankring_history_dir = $HOME.'/tmp'
 
+" yankリスト表示
+nnoremap <silent> ,yr :YRShow<CR>
+
 " Vimでカーソル下のPerlモジュールを開く
 autocmd FileType perl set isfname-=-
 
@@ -428,6 +431,7 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ',pe 【:PhraseEdit】[phrase]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ',pc 【:PhraseCreate】[phrase]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ',r 【スクリプト実行】[quickrun]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',yr 【yankリスト表示】[yankring]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':e ++enc=utf-8 【文字コードをutf8に】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':setlocal fileencoding=utf-8 【ファイルエンコーディング変更】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':setl ff? 【ファイルフォーマット確認】[command]', 'source': 'my_help', 'kind': 'word' },
