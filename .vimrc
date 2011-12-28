@@ -455,6 +455,7 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ':%!xxd -r 【バイナリ保存】[command][binary]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '/hoge\&fuga 【and検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '/hoge\|fuga 【or検索】[search]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': 'v選択してから* 【範囲選択したものを検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \ ]
 endfunction
 call unite#define_source(s:unite_source)
