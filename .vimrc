@@ -456,6 +456,7 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': '/hoge\&fuga 【and検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '/hoge\|fuga 【or検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': 'v選択してから* 【範囲選択したものを検索】[search]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': 'v選択してから<数字>C-a/C-x 【範囲選択した数字を一括インクリメント/デクリメント】[speeddating]', 'source': 'my_help', 'kind': 'word' },
   \ ]
 endfunction
 call unite#define_source(s:unite_source)
