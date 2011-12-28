@@ -440,6 +440,7 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ',r 【スクリプト実行】[quickrun]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ',yr 【yankリスト表示】[yankring]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '( 【今いるスコープの括弧を表示】[user]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ':AllMaps 【定義されてるマッピング全て表示】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':e ++enc=utf-8 【文字コードをutf8に】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':setlocal fileencoding=utf-8 【ファイルエンコーディング変更】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':setl ff? 【ファイルフォーマット確認】[command]', 'source': 'my_help', 'kind': 'word' },
