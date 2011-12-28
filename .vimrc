@@ -410,6 +410,19 @@ endfunction
 au! BufWritePost *.pm call s:validate_package_name()
 au! BufWritePost *.pl,*.pm call s:validate_encoding_utf8()
 
+" vim-funlib
+function! MD5(data)
+  return hashlib#md5(a:data)
+endfunction
+
+function! Sha1(data)
+  return hashlib#sha1(a:data)
+endfunction
+
+function! Sha256(data)
+  return hashlib#sha256(a:data)
+endfunction
+
 " 環境毎の個別設定読み込み
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
@@ -453,6 +466,9 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ':set binary 【バイナリ編集モード】[command][binary]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':%!xxd 【16進数ダンプ】[command][binary]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':%!xxd -r 【バイナリ保存】[command][binary]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ':echo MD5("textdata") 【MD5計算】[command][md5]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ':echo Sha1("textdata") 【Sha1計算】[command][sha1]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ':echo Sha256("textdata") 【Sha256計算】[command][sha256]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '/hoge\&fuga 【and検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '/hoge\|fuga 【or検索】[search]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': 'v選択してから* 【範囲選択したものを検索】[search]', 'source': 'my_help', 'kind': 'word' },
