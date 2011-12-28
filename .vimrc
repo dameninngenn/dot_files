@@ -151,6 +151,10 @@ nnoremap q: <Nop>
 nnoremap q/ <Nop>
 nnoremap q? <Nop>
 
+" 範囲選択でインデント変更する場合に選択したままにする
+vnoremap < <gv
+vnoremap > >gv
+
 " pathogen.vim
 call pathogen#runtime_append_all_bundles()
 
