@@ -463,6 +463,7 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ',1/,2 【選択範囲のdiff表示】[blockdiff]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '( 【今いるスコープの括弧を表示】[user]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': 'dit 【XMLタグに囲まれた範囲を削除】[system][xml]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ':GoogleTasks 【googletasksの内容を表示】[command][googletasks]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':AllMaps 【定義されてるマッピング全て表示】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':e ++enc=utf-8 【文字コードをutf8に】[command]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':setlocal fileencoding=utf-8 【ファイルエンコーディング変更】[command]', 'source': 'my_help', 'kind': 'word' },
