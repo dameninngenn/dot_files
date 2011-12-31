@@ -347,6 +347,9 @@ nnoremap <silent> <Leader>up  :<C-u>Unite phrase<CR>
 vnoremap <silent> <Leader>1  :BlockDiff1<CR>
 vnoremap <silent> <Leader>2  :BlockDiff2<CR>
 
+" Unite用スクリプト
+nnoremap <silent> <Leader>un :Unite script:perl:~/.vim/unite-scripts/nicoranking.pl<CR>
+
 " http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
 nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
 if !exists('*PreviewOpenBrace')
@@ -461,6 +464,7 @@ function! s:unite_source.gather_candidates(args, context)
   \   { 'word': ',r 【スクリプト実行】[quickrun]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ',yr 【yankリスト表示】[yankring]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ',1/,2 【選択範囲のdiff表示】[blockdiff]', 'source': 'my_help', 'kind': 'word' },
+  \   { 'word': ',un 【ニコニコ動画のランキング表示】[unite-scripts]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': '( 【今いるスコープの括弧を表示】[user]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': 'dit 【XMLタグに囲まれた範囲を削除】[system][xml]', 'source': 'my_help', 'kind': 'word' },
   \   { 'word': ':GoogleTasks 【googletasksの内容を表示】[command][googletasks]', 'source': 'my_help', 'kind': 'word' },
