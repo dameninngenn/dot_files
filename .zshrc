@@ -206,6 +206,11 @@ bindkey '^x^p' predict-off
 zstyle ':predict' verbose true
 zstyle ':predict' toggle true
 
+# コマンドオプション補完増強
+# https://github.com/zsh-users/zsh-completions
+if [ ! -d "~/.zsh-completions" ]; then
+    fpath=(~/.zsh-completions $fpath)
+fi
 
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
