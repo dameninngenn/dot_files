@@ -31,6 +31,9 @@ esac
 # PAGER
 export PAGER='less -R'
 
+# grep
+export GREP_OPTIONS='--color=auto'
+
 # alias
 setopt complete_aliases
 alias rm='rm -i'
