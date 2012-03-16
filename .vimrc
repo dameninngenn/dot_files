@@ -155,14 +155,20 @@ nnoremap q? <Nop>
 vnoremap < <gv
 vnoremap > >gv
 
+" 大文字小文字無視
+set ignorecase
+
+" 大文字ではじめたら大文字小文字無視しない
+set smartcase
+
 " pathogen.vim
 call pathogen#runtime_append_all_bundles()
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
-" 大文字小文字を区別する
-let g:neocomplcache_enable_smart_case = 1
+" 大文字小文字を区別しない
+let g:neocomplcache_enable_smart_case = 0
 
 " キャメルケース補完を有効にする
 let g:neocomplcache_enable_camel_case_completion = 1
