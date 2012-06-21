@@ -356,6 +356,9 @@ vnoremap <silent> <Leader>2  :BlockDiff2<CR>
 " Unite用スクリプト
 nnoremap <silent> <Leader>un :Unite script:perl:~/.vim/unite-scripts/nicoranking.pl<CR>
 
+" w3m
+let g:w3m#command = '/usr/bin/w3m'
+
 " http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
 nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
 if !exists('*PreviewOpenBrace')
