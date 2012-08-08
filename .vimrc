@@ -291,6 +291,13 @@ if version >= 703
   set undodir=~/tmp/
 endif
 
+" 行末スペースのハイライト
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+
 " NERD_tree
 " トグル
 nnoremap <silent> ,ntt :NERDTreeToggle<CR>
