@@ -366,9 +366,6 @@ nnoremap <silent> <Leader>un :Unite script:perl:~/.vim/unite-scripts/nicoranking
 " w3m
 let g:w3m#command = '/usr/bin/w3m'
 
-" http://perl-users.jp/articles/advent-calendar/2012/casual/13
-autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl-script.txt
-
 " http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
 nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
 if !exists('*PreviewOpenBrace')
@@ -458,3 +455,23 @@ endif
 " https://github.com/dameninngenn/unite-source-my-help
 nnoremap <silent> ,uh :Unite my_help<CR>
 
+" http://perl-users.jp/articles/advent-calendar/2012/casual/13
+autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl-script.txt
+
+function! s:pm_template()
+    let path = substitute(expand('%'), '.*lib/', '', 'g')
+    let path = substitute(path, '[\\/]', '::', 'g')
+    let path = substitute(path, '\.pm$', '', 'g')
+
+    call append(0, 'package ' . path . ';')
+    call append(1, 'use strict;')
+    call append(2, 'use warnings;')
+    call append(3, 'use utf8;')
+    call append(4, '')
+    call append(5, '')
+    call append(6, '')
+    call append(7, '1;')
+    call cursor(6, 0)
+    " echomsg path
+endfunction
+autocmd BufNewFile *.pm call s:pm_template()
