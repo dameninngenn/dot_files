@@ -366,6 +366,9 @@ nnoremap <silent> <Leader>un :Unite script:perl:~/.vim/unite-scripts/nicoranking
 " w3m
 let g:w3m#command = '/usr/bin/w3m'
 
+" http://perl-users.jp/articles/advent-calendar/2012/casual/13
+autocmd BufNewFile *.pl 0r $HOME/.vim/template/perl-script.txt
+
 " http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
 nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
 if !exists('*PreviewOpenBrace')
