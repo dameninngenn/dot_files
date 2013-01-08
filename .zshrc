@@ -108,6 +108,16 @@ precmd_perl_v () {
 }
 precmd_functions+=precmd_perl_v
 
+# z.sh
+if [ -f $HOME/local/bin/z.sh ]; then
+    _Z_CMD=j
+    source $HOME/local/bin/z.sh
+    precmd_z () {
+        _z --add "$(pwd -P)"
+    }
+    precmd_functions+=precmd_z
+fi
+
 # prompt表示設定
 PROMPT="%B%1(v|%{[32;40m%}%1v%{[m%}|)%b%B%{[35;40m%}[orz %c/]%%%{[m%}%b%{$reset_color%} "
 PROMPT2="%{[35;40m%}%_%%%{[m%}%{$reset_color%} "
