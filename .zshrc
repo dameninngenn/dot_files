@@ -124,6 +124,8 @@ PROMPT2="%{[35;40m%}%_%%%{[m%}%{$reset_color%} "
 SPROMPT="%{[35;40m%}%r is correct? [n,y,a,e]:%{[m%}%{$reset_color%} "
 RPROMPT="%{[36;40m%}[%~]%{m%}%2(v|%B%{[31;40m%}(%2v)%{[m%}|)%{${reset_color}%}"
 
+# コマンド入力後右プロンプト消す
+setopt transient_rprompt
 
 # TABで変換候補切り替え
 setopt auto_menu
