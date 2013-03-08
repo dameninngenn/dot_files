@@ -306,6 +306,17 @@ nnoremap <unique> <silent> ,ub :Unite buffer<CR>
 nnoremap <unique> <silent> ,ur :Unite register<CR>
 nnoremap <unique> <silent> ,us :Unite source<CR>
 
+let g:unite_source_process_enable_confirm = 0
+function! s:unite_my_settings()
+  " デフォルトのkeymapを入れ替える
+  nmap <buffer> Q <Plug>(unite_exit)
+  nmap <buffer> q <Plug>(unite_all_exit)
+endfunction"}}}
+augroup vimrc-unite
+  autocmd!
+  autocmd FileType unite call s:unite_my_settings()
+augroup END
+
 " ハイライトの指定
 let g:unite_abbr_highlight = 'Pmenu'
 
