@@ -83,6 +83,9 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=32' 'bd=46;34' 'c
 # 大文字小文字の区別をせずに補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+# tab補完で選択できるようにする
+zstyle ':completion:*:default' menu select
+
 # プロンプト設定
 setopt prompt_subst
 autoload colors
