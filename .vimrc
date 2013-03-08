@@ -50,6 +50,53 @@ if has('autocmd')
   autocmd BufReadPost * call AU_ReCheck_FENC()
 endif
 
+
+" Vi互換をオフ
+set nocompatible
+
+" neobundle
+" 初回起動時はneobundleを手動でとってこないといけない。
+" セットアップスクリプトのほうでやるようにしてる
+" % mkdir -p ~/.vim/bundle
+" % git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('~/.vim/bundle'))
+endif
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" github
+NeoBundle 'adie/BlockDiff'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/googletasks-vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'ikeji/unite-script'
+NeoBundle 'houtsnip/vim-emacscommandline'
+NeoBundle 'ynkdir/vim-funlib'
+NeoBundle 'mattn/hahhah-vim'
+NeoBundle 'vim-scripts/phrase.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'dameninngenn/vim-uwaa'
+NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'yuratomo/w3m.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'sukima/xmledit'
+NeoBundle 'm4i/YankRingSync'
+NeoBundle 'fuenor/qfixgrep'
+
+" github - vim-scripts
+NeoBundle 'Align'
+NeoBundle 'buftabs'
+NeoBundle 'eregex.vim'
+NeoBundle 'YankRing.vim'
+
+filetype plugin indent on
+
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
 
@@ -60,9 +107,6 @@ endif
 
 syntax on
 filetype plugin on
-
-" Vi互換をオフ
-set nocompatible
 
 " コマンドライン補完を拡張モードにする
 set wildmenu
@@ -160,9 +204,6 @@ set ignorecase
 
 " 大文字ではじめたら大文字小文字無視しない
 set smartcase
-
-" pathogen.vim
-call pathogen#runtime_append_all_bundles()
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -297,20 +338,6 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
-
-" NERD_tree
-" トグル
-nnoremap <silent> ,ntt :NERDTreeToggle<CR>
-
-" 現在表示しているファイルのディレクトリを表示
-nnoremap <silent> ,ntd  :NERDTree <C-R>=expand("%:p:h")<CR><CR>
-
-" 隠しファイルの表示ON
-let NERDTreeShowHidden = 1
-
-" Taglist(use exctags)
-nnoremap <silent> ,tl :Tlist<CR>
-set tags=tags,./tags,../tags
 
 " yankringファイル保存PATH
 let g:yankring_history_dir = $HOME.'/tmp'
