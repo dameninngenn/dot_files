@@ -97,6 +97,11 @@ NeoBundle 'YankRing.vim'
 
 filetype plugin indent on
 
+" 環境毎の個別設定読み込み
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
+
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
 
@@ -472,11 +477,6 @@ endfunction
 function! Sha256(data)
   return hashlib#sha256(a:data)
 endfunction
-
-" 環境毎の個別設定読み込み
-if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
-endif
 
 " 忘れがちなショートカットとかをUniteで見れるように
 " https://github.com/dameninngenn/unite-source-my-help
