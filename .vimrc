@@ -88,6 +88,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'sukima/xmledit'
 NeoBundle 'm4i/YankRingSync'
 NeoBundle 'fuenor/qfixgrep'
+NeoBundle 'Shougo/neosnippet'
 
 " github - vim-scripts
 NeoBundle 'Align'
