@@ -88,6 +88,7 @@ NeoBundle 'sukima/xmledit'
 NeoBundle 'm4i/YankRingSync'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'dameninngenn/unite-converter-buffer-simple'
 
 " github - vim-scripts
 NeoBundle 'Align'
@@ -315,6 +316,10 @@ augroup vimrc-unite
   autocmd!
   autocmd FileType unite call s:unite_my_settings()
 augroup END
+
+" bufferの表示をファイル名だけに
+call unite#custom_source('buffer,buffer_tab', 'filters',
+\ ['converters', 'converter_buffer_simple'])
 
 " ハイライトの指定
 let g:unite_abbr_highlight = 'Pmenu'
