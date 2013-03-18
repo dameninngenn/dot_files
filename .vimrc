@@ -324,9 +324,10 @@ call unite#custom_source('buffer,buffer_tab', 'filters',
 " ハイライトの指定
 let g:unite_abbr_highlight = 'Pmenu'
 
-" quickrun(\r)の出力先をウィンドウではなく!実行と同じに変更
+" quickrun
 let g:quickrun_config = {
-\   '*': {'runmode': 'simple','output': '!'},
+\   '*'   : { 'runmode': 'simple','outputter': 'message' },
+\   'perl': { 'command' : 'perl', 'cmdopt': '-MProject::Libs' },
 \ }
 
 " 拡張子の関連付け
