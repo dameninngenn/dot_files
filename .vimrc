@@ -89,6 +89,7 @@ NeoBundle 'm4i/YankRingSync'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'dameninngenn/unite-converter-buffer-simple'
+NeoBundle 'dameninngenn/unite-perldoc'
 
 " github - vim-scripts
 NeoBundle 'Align'
