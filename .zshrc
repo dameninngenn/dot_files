@@ -159,6 +159,9 @@ setopt noautoremoveslash
 # exit時にSIGHUPを送らない
 setopt nohup
 
+# C-s, C-q 無効
+setopt no_flow_control
+
 # ターミナルの枠表示
 case "${TERM}" in
 screen)
