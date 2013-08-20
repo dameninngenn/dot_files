@@ -76,7 +76,6 @@ NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'ikeji/unite-script'
 NeoBundle 'houtsnip/vim-emacscommandline'
 NeoBundle 'ynkdir/vim-funlib'
-NeoBundle 'mattn/hahhah-vim'
 NeoBundle 'vim-scripts/phrase.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-speeddating'
@@ -90,10 +89,10 @@ NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'dameninngenn/unite-converter-buffer-simple'
 NeoBundle 'dameninngenn/unite-perldoc'
+NeoBundle 'bling/vim-airline'
 
 " github - vim-scripts
 NeoBundle 'Align'
-NeoBundle 'buftabs'
 NeoBundle 'eregex.vim'
 NeoBundle 'YankRing.vim'
 
@@ -126,12 +125,6 @@ filetype on
 
 " ステータスライン表示
 set laststatus=2
-set statusline=
-set statusline+=%=\ %{g:HahHah()}\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c%V%8P
-
-" ステータスラインの色をモード別で変更
-au InsertEnter * hi StatusLine guifg=DarkBlue guibg=DarkYellow gui=none ctermfg=DarkBlue ctermbg=DarkYellow cterm=none
-au InsertLeave * hi StatusLine guifg=DarkBlue guibg=White gui=none ctermfg=DarkBlue ctermbg=White cterm=none
 if has('unix') && !has('gui_running')
     inoremap <silent> <ESC> <ESC>
     inoremap <silent> <C-[> <ESC>
@@ -276,10 +269,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
-" ポップアップメニューの色指定
-hi Pmenu ctermbg=4
-hi PmenuSel ctermbg=8
-
 " perltidy(コード整形)
 map ,pt <ESC>:%! perltidy<CR>
 map ,ptv <ESC>:'<,'>! perltidy<CR>
@@ -287,16 +276,6 @@ map ,ptv <ESC>:'<,'>! perltidy<CR>
 " prove(テスト用)
 map ,t <ESC>:!prove -v %<CR>
 map ,T <ESC>:!prove -v % \| less<CR>
-
-" buftabs設定
-" バッファタブにパスを省略してファイル名のみ表示する(buftabs.vim)
-let g:buftabs_only_basename=1
-
-" バッファの表示をステータスラインに
-let g:buftabs_in_statusline=1
-
-" 選択中のバッファをハイライト
-let g:buftabs_active_highlight_group="Visual"
 
 " バッファ移動をspaceとshift + spaceで
 noremap <Space> :bnext<CR>
@@ -324,9 +303,6 @@ augroup END
 " bufferの表示をファイル名だけに
 call unite#custom_source('buffer,buffer_tab', 'filters',
 \ ['converters', 'converter_buffer_simple'])
-
-" ハイライトの指定
-let g:unite_abbr_highlight = 'Pmenu'
 
 " quickrun
 let g:quickrun_config = {
