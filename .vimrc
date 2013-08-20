@@ -192,6 +192,9 @@ set ttytype=builtin_linux
 " 色設定
 colorscheme darkblue
 
+" 256色
+set t_Co=256
+
 " パッケージの::もオートコンプリートできるように
 set iskeyword+=:
 
