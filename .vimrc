@@ -271,6 +271,10 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+" ポップアップメニューの色指定
+hi Pmenu ctermbg=4
+hi PmenuSel ctermbg=8
+
 " perltidy(コード整形)
 map ,pt <ESC>:%! perltidy<CR>
 map ,ptv <ESC>:'<,'>! perltidy<CR>
