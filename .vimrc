@@ -91,6 +91,7 @@ NeoBundle 'dameninngenn/unite-converter-buffer-simple'
 NeoBundle 'dameninngenn/unite-perldoc'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'bling/vim-bufferline'
+NeoBundle 'tpope/vim-fugitive'
 
 " github - vim-scripts
 NeoBundle 'Align'
