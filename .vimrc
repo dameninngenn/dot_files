@@ -90,6 +90,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'dameninngenn/unite-converter-buffer-simple'
 NeoBundle 'dameninngenn/unite-perldoc'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-bufferline'
 
 " github - vim-scripts
 NeoBundle 'Align'
