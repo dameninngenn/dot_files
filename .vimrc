@@ -340,6 +340,9 @@ if version >= 703
   set undodir=~/tmp/
 endif
 
+" history
+set history=10000
+
 " 行末スペースのハイライト
 augroup HighlightTrailingSpaces
   autocmd!
