@@ -61,7 +61,7 @@ echo "＼　　｀ニニ´　  .:::／";
 echo "／｀ー‐--‐‐- ―´´＼"'
 alias l='unko; unko; unko; unko'
 
-alias ippei='curl https://gist.github.com/dameninngenn/5865715/raw | perl - --color=green'
+alias ippei='curl https://gist.githubusercontent.com/dameninngenn/5865715/raw/timer.pl | perl - --color=green'
 
 # history設定
 HISTFILE=~/.zsh_history
