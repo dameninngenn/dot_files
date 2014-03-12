@@ -32,7 +32,7 @@ esac
 export PAGER='less -R'
 
 # grep
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--color=always'
 
 # alias
 setopt complete_aliases
